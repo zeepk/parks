@@ -3,11 +3,15 @@ import App from './App.vue';
 import InputText from 'primevue/inputtext';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
+import MultiSelect from 'primevue/multiselect';
+import ProgressSpinner from 'primevue/progressspinner';
 
 Vue.config.productionTip = false;
 Vue.component('InputText', InputText);
 Vue.component('DataTable', DataTable);
 Vue.component('Column', Column);
+Vue.component('ProgressSpinner', ProgressSpinner);
+Vue.component('MultiSelect', MultiSelect);
 
 new Vue({
 	render: (h) => h(App),

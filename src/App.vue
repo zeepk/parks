@@ -29,7 +29,7 @@ body {
 	text-align: center;
 	background-color: #2c3e50;
 	color: white;
-	padding-top: 60px;
-	height: 100vh;
+	margin: 0;
+	min-height: 100vh;
 }
 </style>
