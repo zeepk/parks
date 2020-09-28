@@ -24,7 +24,7 @@
 				:rowsPerPageOptions="[10, 20, 50]"
 				currentPageReportTemplate="Showing {first} to {last} of {totalRecords}"
 			>
-				<Column field="fullName" header="Park Name">
+				<Column field="fullName" header="Park Name" sortable>
 					<template #body="slotProps">
 						<a :href="slotProps.data.url">
 							{{ slotProps.data.name }}
