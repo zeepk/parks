@@ -32,7 +32,7 @@
 							/>
 						</template>
 						<template slot="title">{{ park.name }}</template>
-						<template slot="content">
+						<template class="card-content" slot="content">
 							<p>
 								{{ park.description }}
 							</p>
@@ -106,6 +106,7 @@ a {
 }
 .p-grid {
 	margin: 0;
+	padding: 5vh 5vw;
 }
 .search {
 	width: 600px;
@@ -119,5 +120,8 @@ a {
 	width: 100%;
 	height: 50vh;
 	overflow: auto;
+}
+.card-content {
+	padding: 0 !important;
 }
 </style>
