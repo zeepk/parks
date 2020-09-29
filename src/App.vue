@@ -1,35 +1,36 @@
 <template>
-	<div id="app">
-		<HelloWorld msg="Welcome to Your Vue.js App" />
-	</div>
+  <div id="app">
+    <ParksGrid msg="Welcome to Your Vue.js App" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import ParksGrid from "./components/ParksGrid.vue";
 
-import 'primevue/resources/themes/saga-blue/theme.css';
-import 'primevue/resources/primevue.min.css';
-import 'primeicons/primeicons.css';
+import "primevue/resources/themes/saga-blue/theme.css";
+import "primevue/resources/primevue.min.css";
+import "primeicons/primeicons.css";
+import "primeflex/primeflex.css";
 export default {
-	name: 'App',
-	components: {
-		HelloWorld,
-	},
+  name: "App",
+  components: {
+    ParksGrid,
+  },
 };
 </script>
 
 <style>
 body {
-	margin: 0;
+  margin: 0;
 }
 #app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	background-color: #2c3e50;
-	color: white;
-	margin: 0;
-	min-height: 100vh;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-color: #2c3e50;
+  color: white;
+  margin: 0;
+  min-height: 100vh;
 }
 </style>
