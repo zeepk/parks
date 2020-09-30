@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2>National Parks Directory</h2>
+    <h2>National Parks Activities Directory</h2>
     <span class="p-input-icon-left">
       <i class="pi pi-search" />
       <InputText
@@ -8,7 +8,7 @@
         type="text"
         v-model="value"
         @keyup="handleSearch"
-        placeholder="Search by park name, or an activity like Swimming or Birdwatching"
+        placeholder="Search by park name or activity 🌄"
       />
     </span>
     <div v-if="loading"><ProgressSpinner class="loading-spinner" /></div>
@@ -34,17 +34,17 @@
                 height="400"
               />
             </template>
-            <template slot="title">{{ park.fullName }}</template>
+            <template slot="title"
+              ><a :href="park.url">{{ park.fullName }}</a></template
+            >
             <template class="card-content" slot="content">
-              <ul>
-                <li
-                  class="activity"
-                  v-for="activity in park.activities"
-                  :key="activity.id"
-                >
-                  {{ activity.name }}
-                </li>
-              </ul>
+              <p
+                class="activity"
+                v-for="activity in park.activities"
+                :key="activity.id"
+              >
+                {{ activity.name }}
+              </p>
             </template>
           </Card>
         </div>
@@ -119,7 +119,7 @@ a {
 }
 .search {
   width: 600px;
-  max-width: 90vw;
+  max-width: 80vw;
 }
 .card-image {
   max-height: 150px;
@@ -132,7 +132,7 @@ a {
   width: 100%;
   height: 50vh;
   overflow: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 .card-content {
   padding: 0 !important;
