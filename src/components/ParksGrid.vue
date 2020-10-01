@@ -122,7 +122,7 @@ a {
   max-width: 80vw;
 }
 .card-image {
-  max-height: 150px;
+  max-height: 200px;
   object-fit: cover;
 }
 .park-card::-webkit-scrollbar {
