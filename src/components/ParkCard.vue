@@ -15,8 +15,9 @@
 			/>
 		</template>
 		<template slot="title"
-			><a :href="data.url">{{ data.fullName }}</a></template
-		>
+			><a :href="data.url">{{ data.fullName }}</a>
+			<p class="states">{{ data.states.split(',').join(', ') }}</p>
+		</template>
 		<template class="card-content" slot="content">
 			<p
 				class="activity"
@@ -61,5 +62,9 @@ a {
 }
 .activity {
 	text-align: left;
+}
+.states {
+	font-size: 1rem;
+	margin-top: 4px;
 }
 </style>
