@@ -65,6 +65,6 @@ a {
 }
 .states {
 	font-size: 1rem;
-	margin-top: 4px;
+	margin-top: 5px;
 }
 </style>
