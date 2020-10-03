@@ -53,7 +53,7 @@ a {
 }
 .park-card {
 	width: 100%;
-	height: 50vh;
+	height: 55vh;
 	overflow: auto;
 	scrollbar-width: none;
 }
