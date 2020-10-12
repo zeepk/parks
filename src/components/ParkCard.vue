@@ -15,7 +15,7 @@
 			/>
 		</template>
 		<template slot="title"
-			><a :href="data.url">{{ data.fullName }}</a>
+			><a :href="`/park/${data.parkCode}`">{{ data.fullName }}</a>
 			<p class="states">{{ data.states.split(',').join(', ') }}</p>
 		</template>
 		<template class="card-content" slot="content">
