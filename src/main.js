@@ -7,6 +7,11 @@ import Card from 'primevue/card';
 import MultiSelect from 'primevue/multiselect';
 import ProgressSpinner from 'primevue/progressspinner';
 import store from './store'
+import router from './router';
+import 'primevue/resources/themes/saga-blue/theme.css';
+import 'primevue/resources/primevue.min.css';
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css';
 
 Vue.config.productionTip = false;
 Vue.component('InputText', InputText);
@@ -18,5 +23,6 @@ Vue.component('Card', Card);
 
 new Vue({
     store,
-    render: (h) => h(App)
+	router,
+	render: (h) => h(App),
 }).$mount('#app');
