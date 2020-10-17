@@ -4,6 +4,18 @@ export const activityFormatter = (data) => {
 		stringWithEmoji = `🎣 ${data}`;
 		return stringWithEmoji;
 	}
+	if (data.toLowerCase().includes('camp')) {
+		stringWithEmoji = `⛺${data}`;
+		return stringWithEmoji;
+	}
+	if (data.toLowerCase().includes('horse')) {
+		stringWithEmoji = `🏇 ${data}`;
+		return stringWithEmoji;
+	}
+	if (data.toLowerCase().includes('swim')) {
+		stringWithEmoji = `🏊 ${data}`;
+		return stringWithEmoji;
+	}
 	// TODO: swim, shop/store, camp, climb, cycl
 	switch (data) {
 		case 'Arts and Culture':

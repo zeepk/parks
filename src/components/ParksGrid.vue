@@ -39,6 +39,14 @@
 				</div>
 			</div>
 		</div>
+		<div v-if="this.$store.state.tripStopCount > 0">
+			<router-link :to="'/roadtrip'">
+				<Button
+					class="roadtrip-button"
+					:label="`Road trip! ${this.$store.state.tripStopCount} stops`"
+				/>
+			</router-link>
+		</div>
 	</div>
 </template>
 
@@ -155,5 +163,11 @@ a {
 }
 .made-by > a {
 	color: rgba(255, 255, 255, 0.48) !important;
+}
+.roadtrip-button {
+	position: fixed;
+	bottom: 2%;
+	width: 200px;
+	left: calc(50vw - 100px);
 }
 </style>

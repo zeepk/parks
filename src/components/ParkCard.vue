@@ -13,6 +13,12 @@
 				width="600"
 				height="400"
 			/>
+			<Button
+				icon="pi pi-plus"
+				class="p-button-rounded p-button-success add-roadtrip"
+				@click="addStop($event)"
+				v-tooltip.left="'Add to road trip!'"
+			/>
 		</template>
 		<template slot="title"
 			><a :href="`/park/${data.parkCode}`">{{ data.fullName }}</a>
@@ -36,6 +42,14 @@ export default {
 	props: {
 		data: Object,
 	},
+	methods: {
+		addStop() {
+			this.$store.commit('increment');
+			this.$store.commit('addStop', this.data);
+			// console.log(this.$store.state.tripStopCount);
+			// console.log('added');
+		},
+	},
 };
 </script>
 
@@ -56,6 +70,7 @@ a {
 	height: 50vh;
 	overflow: auto;
 	scrollbar-width: none;
+	position: relative;
 }
 .card-content {
 	padding: 0 !important;
@@ -66,5 +81,10 @@ a {
 .states {
 	font-size: 1rem;
 	margin-top: 5px;
+}
+.add-roadtrip {
+	position: absolute;
+	top: 2%;
+	right: 2%;
 }
 </style>
