@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>Road Trip!</h1>
+		<h1>Road trip time!</h1>
 		<p>Here are your stops:</p>
 		<ul>
 			<li v-for="stop in this.$store.state.tripStops" :key="stop.name">
