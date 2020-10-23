@@ -7,6 +7,7 @@ import Column from 'primevue/column';
 import Card from 'primevue/card';
 import MultiSelect from 'primevue/multiselect';
 import ProgressSpinner from 'primevue/progressspinner';
+import Carousel from 'primevue/carousel';
 import Tooltip from 'primevue/tooltip';
 import store from './store';
 import router from './router';
@@ -23,6 +24,7 @@ Vue.component('ProgressSpinner', ProgressSpinner);
 Vue.component('MultiSelect', MultiSelect);
 Vue.component('Card', Card);
 Vue.component('Button', Button);
+Vue.component('Carousel', Carousel);
 Vue.directive('tooltip', Tooltip);
 
 new Vue({

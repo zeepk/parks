@@ -4,6 +4,12 @@
 		<div v-else>
             <h1>Park Data for:</h1>
             <h1>{{parksData[0].fullName}}</h1>
+			
+<Carousel :value="parksData[0].images" :numVisible="1" :numScroll="1" :circular="true" >
+	<template #item="slotProps">
+                    <img class="carousel-image" :src="slotProps.data.url" :alt="slotProps.data.altText" />
+	</template>
+</Carousel>
 		</div>
 	</div>
 </template>
@@ -18,7 +24,6 @@ export default {
 	data: () => {
 		return {
 			parksData: [],
-			value: '',
 			loading: true,
 		};
     },
@@ -30,6 +35,7 @@ export default {
 			.then((res) => res.json())
 			.then((data) => {
                 console.log(data.data[0])
+                console.log(data.data[0].images)
 				data.data = data.data.map((park) => {
 					park.activities = park.activities.map((activity) => {
 						activity.name = activityFormatter(activity.name);
@@ -58,5 +64,9 @@ h1 {
 	position: absolute;
 	left: calc(50vw - 100px);
 	top: calc(50vh - 100px);
+}
+.carousel-image {
+	max-height: 50vh;
+	max-width: 100%;
 }
 </style>
