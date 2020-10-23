@@ -1,11 +1,17 @@
 <template>
 	<div>
         <div v-if="loading"><ProgressSpinner class="loading-spinner" /></div>
-		<div v-else>
-            <h1>Park Data for:</h1>
-            <h1>{{parksData[0].fullName}}</h1>
+		<div v-else >
+            <h1>{{parkData.fullName}}</h1>
+			<div class="park-info-container">
+            <a :href="`http://maps.google.com/?q=${parkData.fullName.split(' ').join('+')}`" class="link location">📍 Location and Directions</a>
+			<div v-if="parkData.contacts.phoneNumbers.length > 0">
+			<a :href="`tel:${parkData.contacts.phoneNumbers[0].phoneNumber.split('/').join('-') || 'google.com'}`" class="link phone">📱 Contact Phone</a>
+			</div>
+            <p class="description">{{parkData.description}}</p>
+			</div>
 			
-<Carousel :value="parksData[0].images" :numVisible="1" :numScroll="1" :circular="true" >
+<Carousel :value="parkData.images" :numVisible="1" :numScroll="1" :circular="true" >
 	<template #item="slotProps">
                     <img class="carousel-image" :src="slotProps.data.url" :alt="slotProps.data.altText" />
 	</template>
@@ -23,7 +29,7 @@ export default {
 	name: 'ParkData',
 	data: () => {
 		return {
-			parksData: [],
+			parkData: [],
 			loading: true,
 		};
     },
@@ -35,7 +41,6 @@ export default {
 			.then((res) => res.json())
 			.then((data) => {
                 console.log(data.data[0])
-                console.log(data.data[0].images)
 				data.data = data.data.map((park) => {
 					park.activities = park.activities.map((activity) => {
 						activity.name = activityFormatter(activity.name);
@@ -44,7 +49,7 @@ export default {
 					return park;
 				});
 				this.apiData = data;
-				this.parksData = data.data;
+				this.parkData = data.data[0];
 			})
 			.catch((err) => console.log(err))
 			.finally(() => (this.loading = false));
@@ -56,7 +61,7 @@ export default {
 <style scoped>
 h1 {
     margin: 0;
-    padding: 10vh 0;
+    padding: 3vh 0;
 }
 .loading-spinner {
 	width: 200px;
@@ -68,5 +73,15 @@ h1 {
 .carousel-image {
 	max-height: 50vh;
 	max-width: 100%;
+}
+.park-info-container {
+	text-align: left;
+	padding: 0 5vw;
+
+}
+.link {
+	color: white;
+	text-decoration: none;
+	line-height: 250%;
 }
 </style>
